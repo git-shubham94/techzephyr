@@ -1,0 +1,212 @@
+/* Floating Button */
+.accessibility-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: white;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.accessibility-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Panel */
+.accessibility-panel {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 380px;
+  max-height: 90vh;
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  overflow: hidden;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+.panel-header {
+  padding: 20px;
+  background: var(--color-primary);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.close-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.panel-content {
+  padding: 20px;
+  max-height: calc(90vh - 80px);
+  overflow-y: auto;
+}
+
+/* Setting Items */
+.setting-item {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+.setting-item label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 1.125rem;
+  color: var(--color-text);
+}
+
+.setting-icon {
+  font-size: 1.5rem;
+}
+
+.setting-label {
+  font-weight: 600;
+}
+
+.setting-description {
+  margin: 8px 0 0 48px;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* Font Size Buttons */
+.font-size-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.font-size-buttons button {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid var(--color-border);
+  background: var(--color-background);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.font-size-buttons button:nth-child(1) {
+  font-size: 0.875rem;
+}
+
+.font-size-buttons button:nth-child(2) {
+  font-size: 1rem;
+}
+
+.font-size-buttons button:nth-child(3) {
+  font-size: 1.25rem;
+}
+
+.font-size-buttons button.active {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.font-size-buttons button:hover:not(.active) {
+  border-color: var(--color-primary);
+}
+
+/* Language Select */
+select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Keyboard Shortcuts */
+.shortcuts-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0 0;
+}
+
+.shortcuts-list li {
+  padding: 8px 0;
+  color: var(--color-text-secondary);
+}
+
+kbd {
+  display: inline-block;
+  padding: 4px 8px;
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.875rem;
+  margin: 0 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .accessibility-panel {
+    right: 10px;
+    left: 10px;
+    width: auto;
+  }
+}
